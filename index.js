@@ -29,7 +29,7 @@ const { nextISSTimesForMyLocation } = require("./iss");
 // console.log('It worked! Returned IP:' , ip);
 // });
 
-const passDates = function(passTimes) {
+const passDates = function (passTimes) {
   passTimes.forEach((singlePass) => {
     let dateAndTime = new Date(0);
     dateAndTime.setUTCSeconds(singlePass.risetime);
@@ -45,4 +45,4 @@ nextISSTimesForMyLocation((error, passTimes) => {
   passDates(passTimes);
 })
   
-  
+module.exports = passDates;
